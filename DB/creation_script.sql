@@ -7,8 +7,8 @@ CREATE TABLE empresa(
   ciudad varchar(50) NOT NULL,
   region varchar(50) DEFAULT NULL,
   pais varchar(50) DEFAULT NULL,
-  diasCompra varchar(50) NOT NULL,
-  horario varchar(25) NOT NULL,
+  diasCompra varchar(50) NULL,
+  horario varchar(25) NULL,
   numLlamadas int DEFAULT NULL,
   acumulado double DEFAULT NULL,
   PRIMARY KEY (codigo)
