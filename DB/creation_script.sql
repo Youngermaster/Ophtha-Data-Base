@@ -718,6 +718,12 @@ CREATE TABLE producto (
   PRIMARY KEY (nombre)
 );
 
+INSERT INTO `producto` (`nombre`, `precio`, `ml`) VALUES 
+  ('FREEGEN PREPACK', '38900', NULL), ('DORTIM', '84800', NULL), 
+  ('FREEGEN GEL', '45600', NULL), ('HIALTEARS PREPACK', '41600', NULL),
+  ('KENALER', '75600', NULL), ('KENALER-R', '74200', NULL), 
+  ('OLODINA', '78900', NULL);
+
 CREATE TABLE compra (
   idCompra int NOT NULL AUTO_INCREMENT,
   codigo int DEFAULT NULL,
