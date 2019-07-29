@@ -1,38 +1,38 @@
-CREATE TABLE empresa(
-  codigo int NOT NULL,
-  nombre varchar(50) NOT NULL,
-  encargado varchar(50) NOT NULL,
-  telefono varchar(20) NOT NULL,
-  direccion varchar(50) NOT NULL,
-  ciudad varchar(50) NOT NULL,
+CREATE TABLE Companies (
+  code varchar(20) NOT NULL,
+  name varchar(50) NOT NULL,
+  attendant varchar(50) NOT NULL,
+  phone varchar(20) NOT NULL,
+  address varchar(50) NOT NULL,
+  city varchar(50) NOT NULL,
   region varchar(50) DEFAULT NULL,
-  pais varchar(50) DEFAULT NULL,
-  diasCompra varchar(50) NULL,
-  horario varchar(25) NULL,
-  numLlamadas int DEFAULT NULL,
-  acumulado double DEFAULT NULL,
-  PRIMARY KEY (codigo)
+  country varchar(50) DEFAULT NULL,
+  saleDays varchar(50) NULL,
+  schedule varchar(25) NULL,
+  amountOfCalls int DEFAULT NULL,
+  acumulated double DEFAULT NULL,
+  PRIMARY KEY (code)
 );
 
-INSERT INTO empresa VALUES 
+INSERT INTO Companies VALUES 
 (10869, 'Santa Clara', 'Andres Herrera', '(574) 8443221', 'CR 30 # 29-31', 'Salgar', 'Antioquia', 'Colombia', 'Lunes', 'Mañana', NULL, NULL),
 (18352, 'Drog. Metrodescuentos', 'Nelson', '(574) 2628472', 'Cr 51 # 41-148', 'Medellín', 'Antioquia', 'Colombia', 'Miercoles', 'Mañana', NULL, 4920375),
 (22227, 'Drog.pharmakon gp', 'Gonzalo', '(574) 8538600', 'Cr 22 # 20-69', 'Yarumal', 'Antioquia', 'Colombia', 'Martes', 'Mañana', NULL, 5643185),
 (23605, 'Drog. Santa Isabel', 'Alejandra', '(574) 2632453', 'Cr 45 # 80-79', 'Medellín', 'Antioquia', 'Colombia', 'Martes,  Viernes', 'Tarde', NULL, 8761305),
 (27900, 'Drogueria la 10', 'Luis', '(577) 5623335', 'Cl 10 # 14-81', 'Ocaña', 'Norte Santander', 'Colombia', 'Viernes', 'Mañana', NULL, 10505394);
 
-CREATE TABLE paciente (
-  tipo_id char(5) NOT NULL,
-  id int NOT NULL,
-  nombre varchar(50) NOT NULL,
-  telefono varchar(15) DEFAULT NULL, 
-  direccion varchar(60) DEFAULT NULL,
-  interes varchar(50) NOT NULL,
-  celular varchar(20) DEFAULT NULL,
-  PRIMARY KEY (tipo_id, id)
+CREATE TABLE Patients (
+  idType char(5) NOT NULL,
+  id varchar(20) NOT NULL,
+  name varchar(50) NOT NULL,
+  phone varchar(15) DEFAULT NULL, 
+  address varchar(60) DEFAULT NULL,
+  interest varchar(50) NOT NULL,
+  mobileNumber varchar(20) DEFAULT NULL,
+  PRIMARY KEY (idType, id)
 );
 
-INSERT INTO paciente VALUES 
+INSERT INTO Patients VALUES 
 ('C.C',45014,'CRUZ ELIAS SANTACRUZ','5582852',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',220280,'LUCILA MENDEZ','2331928',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',455910,'ANGEL FRANCISCO SEGARRA CANDELO','3105368978',NULL,'FREEGEN PREPACK ',NULL),
@@ -366,17 +366,17 @@ INSERT INTO paciente VALUES
 ('C.C',42692774,'VIBIANA ZAPATA','3148825636',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42694380,'ANA LUZ BETANCUR','3227090',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42700950,'GLORIA MORA','5987583',NULL,'FREEGEN PREPACK ',NULL),
-('C.C',42755355,'ALBA LUCIA OROZCO JARAMILLO','3731439',NULL,'FREEGEN PREPACK ',NULL)
-,('C.C',42759064,'ANGELA POSADA','3729956',NULL,'FREEGEN PREPACK ',NULL),
+('C.C',42755355,'ALBA LUCIA OROZCO JARAMILLO','3731439',NULL,'FREEGEN PREPACK ',NULL),
+('C.C',42759064,'ANGELA POSADA','3729956',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42761403,'PATRICIA ABAD','2652421',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42764187,'ANGELA MARIA ROLDAN','3713050',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42769882,'LUCY ACOSTA','3122439986',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42793676,'ANGELA MARIA CORREA LOPEZ','3738201',NULL,'FREEGEN PREPACK ',NULL),
-('C.C',42794573,'LUZ MARINA PARRA','4931317',NULL,'FREEGEN PREPACK ',NULL)
-,('C.C',42820206,'CLARA LONDOÑO','3218334531',NULL,'FREEGEN PREPACK ',NULL),
+('C.C',42794573,'LUZ MARINA PARRA','4931317',NULL,'FREEGEN PREPACK ',NULL),
+('C.C',42820206,'CLARA LONDOÑO','3218334531',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42866888,'MARIA ESTELA CARDONA','2766681',NULL,'FREEGEN PREPACK ',NULL),
-('C.C',42868636,'ANA CECILIA MONTOYA','3024247',NULL,'OLODINA ',NULL)
-,('C.C',42870557,'MARY LUZ VILLA ANGEL','3008051759',NULL,'FREEGEN PREPACK ',NULL),
+('C.C',42868636,'ANA CECILIA MONTOYA','3024247',NULL,'OLODINA ',NULL),
+('C.C',42870557,'MARY LUZ VILLA ANGEL','3008051759',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42875679,'XIOMARA ESTRADA','6123549',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42876192,'DORIS SALAZAR','2657127',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',42877580,'MARTHA CECILIA RIVERA','5773032',NULL,'FREEGEN PREPACK ',NULL),
@@ -710,58 +710,57 @@ INSERT INTO paciente VALUES
 ('C.C',1214723417,'LILIANA ESPINOSA QUINTERO','4910967',NULL,'FREEGEN PREPACK ',NULL),
 ('C.C',1216720884,'HERLINSON CASTAÑO','4274947',NULL,'FREEGEN PREPACK ',NULL);
 
--- ml mililitros
-CREATE TABLE producto (
-  nombre varchar(50) NOT NULL,
-  precio double NOT NULL,
-  ml float DEFAULT NULL,
-  PRIMARY KEY (nombre)
+-- mililitters mililitros
+CREATE TABLE Products (
+  name varchar(50) NOT NULL,
+  price double NOT NULL,
+  mililitters float DEFAULT NULL,
+  PRIMARY KEY (name)
 );
 
-INSERT INTO `producto` (`nombre`, `precio`, `ml`) VALUES 
+INSERT INTO `Products` (`name`, `price`, `mililitters`) VALUES 
   ('FREEGEN PREPACK', '38900', NULL), ('DORTIM', '84800', NULL), 
   ('FREEGEN GEL', '45600', NULL), ('HIALTEARS PREPACK', '41600', NULL),
   ('KENALER', '75600', NULL), ('KENALER-R', '74200', NULL), 
   ('OLODINA', '78900', NULL);
 
-CREATE TABLE compra (
-  idCompra int NOT NULL AUTO_INCREMENT,
-  codigo int DEFAULT NULL,
-  tipo_id char(5) DEFAULT NULL,
-  id int DEFAULT NULL,
-  fecha date NOT NULL,
-  valor double NOT NULL,
-  cantidad int NOT NULL,
-  PRIMARY KEY (idCompra),
-  FOREIGN KEY (codigo) REFERENCES empresa (codigo),
-  FOREIGN KEY (tipo_id, id) REFERENCES paciente (tipo_id, id)
-);
-
-CREATE TABLE llamada (
-  idLlamada int NOT NULL AUTO_INCREMENT,
-  codigo int DEFAULT NULL,
-  tipo_id char(5) DEFAULT NULL,
+CREATE TABLE Sales (
+  saleID int NOT NULL AUTO_INCREMENT,
+  code varchar(20) DEFAULT NULL,
+  idType char(5) DEFAULT NULL,
   id varchar(20) DEFAULT NULL,
-  estado char(15) NOT NULL,
-  fecha date DEFAULT NULL,
-  hora time DEFAULT NULL,
-  comentario varchar(250) DEFAULT NULL,
-  PRIMARY KEY (idLlamada),
-  FOREIGN KEY (codigo) REFERENCES empresa (codigo),
-  FOREIGN KEY (tipo_id, id) REFERENCES paciente (tipo_id, id)
+  saleDate date NOT NULL,
+  saleValue double NOT NULL,
+  quantity int NOT NULL,
+  PRIMARY KEY (saleID),
+  FOREIGN KEY (code) REFERENCES Companies (code),
+  FOREIGN KEY (idType, id) REFERENCES Patients (idType, id)
 );
 
-INSERT INTO llamada VALUES
+CREATE TABLE Calls (
+  callID int NOT NULL AUTO_INCREMENT,
+  code varchar(20) DEFAULT NULL,
+  idType char(5) DEFAULT NULL,
+  id varchar(20) DEFAULT NULL,
+  status char(15) NOT NULL,
+  callDate date DEFAULT NULL,
+  callHour time DEFAULT NULL,
+  comment varchar(250) DEFAULT NULL,
+  PRIMARY KEY (callID),
+  FOREIGN KEY (code) REFERENCES Companies (code),
+  FOREIGN KEY (idType, id) REFERENCES Patients (idType, id)
+);
+
+INSERT INTO Calls VALUES
 (1, NULL, 'C.C', '21852024', 'Realizada', '2018-12-17', NULL, 'No contestaron.'),
 (NULL, NULL, 'C.C', '43096264', 'Realizada', '2018-12-17', NULL, 'Ya terminó tratamiento.'),
 (NULL, NULL, 'C.C', '32318641', 'Realizada', '2018-12-17', NULL, 'No se encuentra, se deja la razón');
 
-
-CREATE TABLE usuarios (
+CREATE TABLE Users (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre_usuario varchar(20) NOT NULL,
-  contraseña varchar(20) NOT NULL
+  userName varchar(20) NOT NULL,
+  password varchar(20) NOT NULL
 );
 
-INSERT INTO usuario VALUES
+INSERT INTO Users VALUES
 (1, "jmyoungh", "1234");
